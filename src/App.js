@@ -1,23 +1,27 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { milkTheme, GlobalStyle } from './GlobalStyles';
-import { LayoutContainer } from './components/common';
+import { LayoutContainer, Header } from './components/common';
 
-const TestContent = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: red;
-`;
+const Profile = () => <div>on the Profile Tab</div>;
+const Comments = () => <div>on the Comments Tab</div>;
+const Contact = () => <div>on the Contact Tab</div>;
 
 function App() {
   return (
     <ThemeProvider theme={milkTheme}>
       <GlobalStyle />
       <LayoutContainer>
-        <TestContent style={{ gridArea: 'header' }} />
-        <TestContent style={{ gridArea: 'nav' }} />
-        <TestContent style={{ gridArea: 'content' }} />
+        <Router>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Profile} />
+            <Route path="/info" component={Comments} />
+            <Route path="/admin" component={Contact} />
+          </Switch>
+        </Router>
       </LayoutContainer>
     </ThemeProvider>
   );
