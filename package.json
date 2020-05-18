@@ -1,19 +1,21 @@
 {
   "name": "milk-shop",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "set DEBUG=milk-shop:* & node ./bin/www",
+    "startDev": "set DEBUG=milk-shop:* & nodemon --inspect ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yory100/milk-shop.git"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "helmet": "^3.22.0",
+    "mongoose": "^5.9.12",
+    "morgan": "~1.9.1",
+    "validator": "^13.0.0"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yory100/milk-shop/issues"
-  },
-  "homepage": "https://github.com/yory100/milk-shop#readme"
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
