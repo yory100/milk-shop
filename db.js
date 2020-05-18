@@ -7,15 +7,13 @@ const options = {
   poolSize: process.env.POOLSIZE || 4,
 };
 
-const connect = () => {
-  console.log("connection ->", dbUrl);
-  return mongoose
-    .connect(dbUrl, options)
-    .then(() => console.log("Database connection successful"))
-    .catch((err) => {
-      console.error(err);
-      process.exit(1);
-    });
+const connect = async () => {
+  try {
+    return await mongoose.connect(dbUrl, options);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
+  }
 };
 
 module.exports = connect;
