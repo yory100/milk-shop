@@ -10,7 +10,7 @@ const Conatiner = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: fit-content(100px) 1fr;
-  gap: ${(props) => props.theme.spacer_s};
+  grid-gap: ${(props) => props.theme.spacer_s};
   grid-template-areas:
     'header header header header'
     'content content content content';
@@ -20,7 +20,7 @@ const Conatiner = styled.div`
     margin: 0 auto;
     padding: ${(props) => props.theme.spacer_m};
     grid-template-columns: repeat(8, 1fr);
-    gap: ${(props) => props.theme.spacer_m};
+    grid-gap: ${(props) => props.theme.spacer_m};
     grid-template-areas:
       'header header header header header header header header'
       'nav nav nav content content content content content';
@@ -31,7 +31,7 @@ const Conatiner = styled.div`
     margin: 0 auto;
     padding: ${(props) => props.theme.spacer_xl};
     grid-template-columns: repeat(12, 1fr);
-    gap: ${(props) => props.theme.spacer_xl};
+    grid-gap: ${(props) => props.theme.spacer_xl};
     grid-template-areas:
       'header header header header header header header header header header header header'
       'nav nav nav nav content content content content content content content content';
